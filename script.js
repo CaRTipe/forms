@@ -2,7 +2,7 @@ var house = document.getElementById("house");
 var tenant = document.getElementById("tenant");
 
 function selectHouse() {
-  for (var i = 0; i <= 1000; i++) {
+  for (var i = 1; i <= 1000; i++) {
     var option = document.createElement("option");
     option.value = i;
     option.text = "House " + i;
