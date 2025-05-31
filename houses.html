@@ -14,7 +14,15 @@
   </head>
   <body>
     <div class="heading text-center">
-      <h1><b>Rental Management Platform</b></h1>
+      <a href="./index.html"><h1><b>Rental Management Platform</b></h1></a>
+      <button
+        class="btn btn-success"
+        id="addhouses"
+        data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop"
+      >
+        Add
+      </button>
     </div>
     <div>
       <div>
@@ -34,9 +42,49 @@
               <select class="form-select" id="tenant"></select>
             </div>
           </div>
+          <div>
+            <button class="btn btn-secondary" type="submit" >Check</button>
+          </div>
         </form>
       </div>
     </div>
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="houseNo" class="form-label">House No</label>
+              <input
+                type="text"
+                class="form-control"
+                id="houseNo"
+                placeholder="Enter house number"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="tenantName" class="form-label">Tenant Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="tenantName"
+                placeholder="Enter tenant name"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-secondary" style="width: 150px;">Add House</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+
     <script src="script.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

@@ -1,6 +1,6 @@
 var house = document.getElementById("house");
 var tenant = document.getElementById("tenant");
-
+var button = document.getElementById("addhouses")
 function selectHouse() {
   for (var i = 1; i <= 1000; i++) {
     var option = document.createElement("option");
@@ -56,3 +56,7 @@ function selectID() {
   
 }
 selectID()
+
+function addHouse() {
+    
+}
