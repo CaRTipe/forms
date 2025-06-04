@@ -12,7 +12,13 @@ if (isset($_POST['assign_house'])) {
         }
     }
 
-} elseif (isset($_POST['create_house'])) {
+ } // elseif (isset($_POST['create_house'])) {
+//     if(addtenants($_POST['tenantname'])) {
+//         echo "Data updtaed";
+//     } else {
+//         echo "Not Updated";
+//     }
+ elseif (isset($_POST['create_house'])) {
     if (isset($_POST['houseno'])) {
         if(createHouses($_POST['houseno'])) {
             echo "Data Updated";

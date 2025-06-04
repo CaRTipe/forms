@@ -17,7 +17,7 @@ include "server.php";
   </head>
   <body>
     <div class="heading text-center">
-      <a href="./index.html"
+      <a href="./index.php"
         ><h1><b>Rental Management Platform</b></h1></a
       >
       <button

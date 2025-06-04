@@ -37,7 +37,15 @@ function assignHouses($houseid, $tenantid)
     }
 }
 // assignHouses(1,5)
-
+// function addtenants($tenantname) {
+//     global $conn;
+//     $tenant = "insert into tenants (first_name) values $tenantname";
+//     if($conn->query($tenant)) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
 function createHouses($houseno) {
     global $conn;
     $house = "insert into houses (house_number) values($houseno)";

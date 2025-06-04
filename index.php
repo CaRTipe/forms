@@ -15,8 +15,8 @@
   <body>
     <div class="heading text-center">
       <h1><b>Rental Management Platform</b></h1>
-      <a href="./signin.html"><button class="btn btn-success" type="submit">Sign in</button></a>
-      <a href="./houses.html"><button class="btn btn-success" type="submit" style="width: 150px;">Select Houses</button></a>
+      <a href="./signin.php"><button class="btn btn-success" type="submit">Sign in</button></a>
+      <a href="./houses.php"><button class="btn btn-success" type="submit" style="width: 150px;">Select Houses</button></a>
     </div>
     <div class="form" style="margin-top: 50px">
       <form>
