@@ -57,6 +57,4 @@ function selectID() {
 }
 selectID()
 
-function addHouse() {
-        alert("Add houses!!!")
-}
+

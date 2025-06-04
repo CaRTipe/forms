@@ -18,13 +18,13 @@
         ><h1><b>Rental Management Platform</b></h1></a
       >
       <button
+        type="button"
         class="btn btn-success"
-        id="addhouses"
         data-bs-toggle="modal"
-        data-bs-target="#staticBackdrop"
-        onclick="addHouse()"
+        data-bs-target="#exampleModal"
+        style="width: 120px;"
       >
-        Add
+        Add house
       </button>
     </div>
     <div>
@@ -51,46 +51,68 @@
         </form>
       </div>
     </div>
+    <!-- Modal -->
     <div
       class="modal fade"
-      id="staticBackdrop"
+      id="exampleModal"
       tabindex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-      <div
-        class="modal-dialog modal-dialog-centered"
-      >
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="houseNo" class="form-label">House No</label>
-              <input
-                type="text"
-                class="form-control"
-                id="houseNo"
-                placeholder="Enter house number"
-                required
-              />
-            </div>
-            <div class="mb-3">
-              <label for="tenantName" class="form-label">Tenant Name</label>
-              <input
-                type="text"
-                class="form-control"
-                id="tenantName"
-                placeholder="Enter tenant name"
-                required
-              />
-            </div>
+      <div class="modal-dialog  modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
             <button
-              type="submit"
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form action="./added.php" method="post">
+              <div class="mb-3">
+                <label for="houseNo" class="form-label">House No</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="houseNo"
+                  placeholder="Enter house number"
+                  name="houseno"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="tenantName" class="form-label">Tenant Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="tenantName"
+                  placeholder="Enter tenant name"
+                  name="tenantname"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                class="btn btn-secondary"
+                style="width: 150px"
+              >
+                Add House
+              </button>
+            </form>
+          </div>
+          <!-- <div class="modal-footer">
+            <button
+              type="button"
               class="btn btn-secondary"
-              style="width: 150px"
+              data-bs-dismiss="modal"
             >
-              Add House
+              Close
             </button>
-          </form>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div> -->
         </div>
       </div>
     </div>
