@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+include "server.php"; 
+?>
+<!DOCTYPE html > 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -36,13 +39,31 @@
               style="margin-top: 50px"
             >
               <label for="house">House No</label>
-              <select class="form-select" name="" id="house"></select>
+              <select class="form-select" name="" id="houses">
+                <option value="" selected disabled>Select House</option>
+                <?php
+                if (!empty($houses)) {
+                    foreach ($houses as $house) {
+                        echo "<option value='" . htmlspecialchars($house['id']) . "'>" . htmlspecialchars($house['house_number']) . "</option>";
+                    }
+                }
+                ?>
+              </select>
             </div>
             <div
               class="d-flex flex-row justify-content-start align-items-center gap-3"
             >
               <label for="tenant">Tenant</label>
-              <select class="form-select" id="tenant"></select>
+              <select class="form-select" id="tenants">
+                <option value="" selected disabled>Select Tenant</option>
+                <?php
+                if (!empty($tenants)) {
+                    foreach ($tenants as $tenant) {
+                        echo "<option value='" . htmlspecialchars($tenant['id']) . "'>" . htmlspecialchars($tenant['first_name'])  . " " .  htmlspecialchars($tenant['last_name']) . "</option>";
+                    }
+                } 
+                ?>
+              </select>
             </div>
           </div>
           <div>
