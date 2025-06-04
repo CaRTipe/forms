@@ -14,12 +14,15 @@
   </head>
   <body>
     <div class="heading text-center">
-      <a href="./index.html"><h1><b>Rental Management Platform</b></h1></a>
+      <a href="./index.html"
+        ><h1><b>Rental Management Platform</b></h1></a
+      >
       <button
         class="btn btn-success"
         id="addhouses"
         data-bs-toggle="modal"
         data-bs-target="#staticBackdrop"
+        onclick="addHouse()"
       >
         Add
       </button>
@@ -43,7 +46,7 @@
             </div>
           </div>
           <div>
-            <button class="btn btn-secondary" type="submit" >Check</button>
+            <button class="btn btn-secondary" type="submit">Check</button>
           </div>
         </form>
       </div>
@@ -55,7 +58,9 @@
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered">
+      <div
+        class="modal-dialog modal-dialog-centered"
+      >
         <div class="modal-body">
           <form>
             <div class="mb-3">
@@ -78,12 +83,17 @@
                 required
               />
             </div>
-            <button type="submit" class="btn btn-secondary" style="width: 150px;">Add House</button>
+            <button
+              type="submit"
+              class="btn btn-secondary"
+              style="width: 150px"
+            >
+              Add House
+            </button>
           </form>
         </div>
       </div>
     </div>
-    
 
     <script src="script.js"></script>
     <script
