@@ -32,14 +32,14 @@ include "server.php";
     </div>
     <div>
       <div>
-        <form>
+        <form action="./added.php" method="post">
           <div class="my-5">
             <div
               class="d-flex flex-row justify-content-start align-items-center my-4"
               style="margin-top: 50px"
             >
               <label for="house">House No</label>
-              <select class="form-select" name="" id="houses">
+              <select class="form-select" name="houses" id="houses">
                 <option value="" selected disabled>Select House</option>
                 <?php
                 if (!empty($houses)) {
@@ -54,7 +54,7 @@ include "server.php";
               class="d-flex flex-row justify-content-start align-items-center gap-3"
             >
               <label for="tenant">Tenant</label>
-              <select class="form-select" id="tenants">
+              <select class="form-select" id="tenants" name="tenants">
                 <option value="" selected disabled>Select Tenant</option>
                 <?php
                 if (!empty($tenants)) {
@@ -67,7 +67,7 @@ include "server.php";
             </div>
           </div>
           <div>
-            <button class="btn btn-secondary" type="submit">Check</button>
+            <button class="btn btn-secondary" name="assign_house" type="submit">Check</button>
           </div>
         </form>
       </div>
@@ -119,6 +119,7 @@ include "server.php";
                 type="submit"
                 class="btn btn-secondary"
                 style="width: 150px"
+                name="create_house"
               >
                 Add House
               </button>

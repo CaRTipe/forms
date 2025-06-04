@@ -1,20 +1,34 @@
-<html>
-    <body>
+<?php
+if (isset($_POST['assign_house'])) {
 
-        <h1>House No: <?php
-         if (isset($_POST['houseno'])) {
-            echo htmlspecialchars($_POST['houseno']);
-         } else {
-            echo "House number not provided.";
-         }
-        ;  
-        ?><br></h1>
-        <h1>Name: <?php
-            if (isset($_POST['tenantname'])) {
-                echo htmlspecialchars($_POST['tenantname']);
-            } else {
-                echo "Name not provided.";
-            }
-        ?> </h1>
-    </body>
-</html>
+
+    echo "<p>House No: ";
+    if (isset($_POST['houses'])) {
+        echo htmlspecialchars($_POST['houses']);
+    }
+    echo "</p>";
+
+    echo "<p> Tenant Name: ";
+    if (isset($_POST['tenants'])) {
+        echo htmlspecialchars($_POST['tenants']);
+    }
+    echo "</p>";
+}
+elseif (isset($_POST['create_house'])) {
+    echo "<p>House No: ";
+    if (isset($_POST['houseno'])) {
+        echo htmlspecialchars($_POST['houseno']);
+    }
+    echo "</p>";
+
+    echo "<p> Tenant Name: ";
+    if (isset($_POST['tenantname'])) {
+        echo htmlspecialchars($_POST['tenantname']);
+    }
+    echo "</p>";
+}
+else {
+    echo "<p>No Actions selected.</p>";
+}
+
+?>
