@@ -15,10 +15,10 @@
   <body>
     <div class="heading text-center">
       <h1><b>Rental Management Platform</b></h1>
-      <a href="./index.html"
+      <a href="./index.php"
         ><button class="btn btn-success" type="submit">Sign up</button></a
       >
-      <a href="./houses.html"
+      <a href="./houses.php"
         ><button class="btn btn-success" type="submit" style="width: 150px;">Select House</button></a
       >
     </div>
