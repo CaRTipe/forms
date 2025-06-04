@@ -1,34 +1,28 @@
 <?php
+include "server.php";
 if (isset($_POST['assign_house'])) {
 
 
-    echo "<p>House No: ";
-    if (isset($_POST['houses'])) {
-        echo htmlspecialchars($_POST['houses']);
+    if (isset($_POST['houses']) && $_POST['tenants']) {
+        if(assignHouses($_POST['houses'], $_POST['tenants'])) {
+            echo "Data Updated";
+        }
+        else {
+            echo "Not Updated";
+        }
     }
-    echo "</p>";
 
-    echo "<p> Tenant Name: ";
-    if (isset($_POST['tenants'])) {
-        echo htmlspecialchars($_POST['tenants']);
-    }
-    echo "</p>";
-}
-elseif (isset($_POST['create_house'])) {
-    echo "<p>House No: ";
+} elseif (isset($_POST['create_house'])) {
     if (isset($_POST['houseno'])) {
-        echo htmlspecialchars($_POST['houseno']);
+        if(createHouses($_POST['houseno'])) {
+            echo "Data Updated";
+        }
+        else {
+            echo "Not updated";
+        }
     }
-    echo "</p>";
 
-    echo "<p> Tenant Name: ";
-    if (isset($_POST['tenantname'])) {
-        echo htmlspecialchars($_POST['tenantname']);
-    }
-    echo "</p>";
-}
-else {
+} else {
     echo "<p>No Actions selected.</p>";
 }
-
 ?>
