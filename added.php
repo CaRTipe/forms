@@ -26,16 +26,9 @@ if (isset($_POST['assign_house'])) {
             echo "Not Updated";
         }
     }
-} elseif(isset($_POST['check_tenants'])) {
-    if (isset($_POST['email']) && $_POST['password']) {
-        if(checkTenants($_POST['email'], $_POST['password'])) {
-            echo "Data Updated";
-        } else {
-            echo "Not Updated";
-        }
-    }
-
-} 
-else {
+} elseif (isset($_POST['check_tenants'])) {
+    // echo 'Tets';
+    checkTenants($_POST['email'], $_POST['password']);
+} else {
     echo "<p>No Actions selected.</p>";
 }

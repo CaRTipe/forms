@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -62,12 +63,16 @@ function addTenants($firstname, $lastname, $email, $phoneno, $dateofbirth, $pass
         echo $e->getMessage();
     }
 }
-function checkTenants($email, $password) {
+function checkTenants($email, $password)
+{
     global $conn;
-    $check = "SELECT `email`, `password` FROM `tenants` WHERE email='sune@mailator.com'";
-    if ($conn->query($check)) {
-        return true;
+    $check = "SELECT `email`, `password` FROM `tenants` WHERE email = '$email' AND password = '$password' LIMIT 1";
+    $result = $conn->query($check);
+    if ($result->num_rows > 0) {
+        $_SESSION['login'] = true;
+        header("Location: houses.php");
     } else {
-        return false;
+        $_SESSION['login'] = false;
+        header("Location: signin.php");
     }
 }
