@@ -1,3 +1,6 @@
+<?php
+ include 'server.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,7 +22,7 @@
       <a href="./houses.php"><button class="btn btn-success" type="submit" style="width: 150px;">Select Houses</button></a>
     </div>
     <div class="form" style="margin-top: 50px">
-      <form>
+      <form action="./added.php" method="post">
         <div class="gap-5">
           <div
             class="d-flex flex-row justify-content-start align-items-center gap-2"
@@ -31,6 +34,7 @@
                 id="fname"
                 class="form-control-lg"
                 placeholder="Enter your first name"
+                name="fname"
                 required
               />
             </div>
@@ -41,6 +45,7 @@
                 id="lname"
                 class="form-control-lg"
                 placeholder="Enter your last name"
+                name="lname"
                 required
               />
             </div>
@@ -55,6 +60,7 @@
                 id="email"
                 class="form-control-lg"
                 placeholder="Enter your email"
+                name="email"
                 required
               />
             </div>
@@ -65,6 +71,7 @@
                 id="phone"
                 class="form-control-lg"
                 placeholder="Enter your phone number"
+                name="phone"
                 required
               />
             </div>
@@ -80,6 +87,7 @@
                   class="form-control-lg"
                   id="date"
                   placeholder="Select date"
+                  name="date"
                   required
                 />
               </div>
@@ -95,6 +103,7 @@
               id="password"
               class="form-control-lg"
               placeholder="Enter your password"
+              name="password"
               required
               />
             </div>
@@ -108,7 +117,7 @@
           </div>
         </div>
           <div class="d-flex flex-row">
-            <button class="btn btn-secondary mt-2" type="submit">Submit</button>
+            <button class="btn btn-secondary mt-2" type="submit" name="add_tenants">Submit</button>
           </div>
         </div>
       </form>

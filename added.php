@@ -4,31 +4,28 @@ if (isset($_POST['assign_house'])) {
 
 
     if (isset($_POST['houses']) && $_POST['tenants']) {
-        if(assignHouses($_POST['houses'], $_POST['tenants'])) {
+        if (assignHouses($_POST['houses'], $_POST['tenants'])) {
             echo "Data Updated";
-        }
-        else {
+        } else {
             echo "Not Updated";
         }
     }
-
- } // elseif (isset($_POST['create_house'])) {
-//     if(addtenants($_POST['tenantname'])) {
-//         echo "Data updtaed";
-//     } else {
-//         echo "Not Updated";
-//     }
- elseif (isset($_POST['create_house'])) {
-    if (isset($_POST['houseno'])) {
-        if(createHouses($_POST['houseno'])) {
+} elseif (isset($_POST["add_tenants"])) {
+    if (isset($_POST['fname']) && $_POST['lname'] && $_POST['email'] && $_POST['phone'] && $_POST['date'] && $_POST['password']) {
+        if (addTenants($_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['phone'], $_POST['date'], $_POST['password'])) {
             echo "Data Updated";
+        } else {
+            echo "Not Updated";
         }
-        else {
+    }
+} elseif (isset($_POST['create_house'])) {
+    if (isset($_POST['houseno'])) {
+        if (createHouses($_POST['houseno'])) {
+            echo "Data Updated";
+        } else {
             echo "Not updated";
         }
     }
-
 } else {
     echo "<p>No Actions selected.</p>";
 }
-?>
