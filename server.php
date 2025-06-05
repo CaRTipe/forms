@@ -49,9 +49,23 @@ function createHouses($houseno)
 function addTenants($firstname, $lastname, $email, $phoneno, $dateofbirth, $password)
 {
     global $conn;
-    $tenant = "insert into tenants (first_name, last_name, email, phone, date_of_birth, password)
-                values($firstname, $lastname, $email, $phoneno, $dateofbirth, $password)";
-    if ($conn->query($tenant)) {
+
+    try {
+        $tenant = "INSERT INTO `tenants`(`first_name`, `last_name`, `email`, `phone`,`date_of_birth`, `password`) VALUES ('$firstname','$lastname', '$email','$phoneno','$dateofbirth', '$password')";
+        if ($conn->query($tenant)) {
+            return true;
+        } else {
+            return false;
+        }
+        //code...
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+}
+function checkTenants($email, $password) {
+    global $conn;
+    $check = "SELECT `email`, `password` FROM `tenants` WHERE email='sune@mailator.com'";
+    if ($conn->query($check)) {
         return true;
     } else {
         return false;
