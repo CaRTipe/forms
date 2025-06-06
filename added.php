@@ -12,11 +12,7 @@ if (isset($_POST['assign_house'])) {
     }
 } elseif (isset($_POST["add_tenants"])) {
     if (isset($_POST['fname']) && $_POST['lname'] && $_POST['email'] && $_POST['phone'] && $_POST['date'] && $_POST['password']) {
-        if (addTenants($_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['phone'], $_POST['date'], $_POST['password'])) {
-            echo "Data Updated";
-        } else {
-            echo "Not Updated";
-        }
+        addTenants($_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['phone'], $_POST['date'], $_POST['password']);
     }
 } elseif (isset($_POST['create_house'])) {
     if (isset($_POST['houseno'])) {

@@ -24,7 +24,7 @@ include "server.php";
 
     <?php
     if (isset($_SESSION['login']) && $_SESSION['login']): ?>
-      <a href="logout.php">Logout</a>
+      <a href="logout.php"><button class="btn btn-success">Log out</button></a>
     <?php
     endif; ?>
     <button

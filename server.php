@@ -51,16 +51,13 @@ function addTenants($firstname, $lastname, $email, $phoneno, $dateofbirth, $pass
 {
     global $conn;
 
-    try {
-        $tenant = "INSERT INTO `tenants`(`first_name`, `last_name`, `email`, `phone`,`date_of_birth`, `password`) VALUES ('$firstname','$lastname', '$email','$phoneno','$dateofbirth', '$password')";
-        if ($conn->query($tenant)) {
-            return true;
-        } else {
-            return false;
-        }
-        //code...
-    } catch (Exception $e) {
-        echo $e->getMessage();
+    $tenant = "INSERT INTO `tenants`(`first_name`, `last_name`, `email`, `phone`,`date_of_birth`, `password`) VALUES ('$firstname','$lastname', '$email','$phoneno','$dateofbirth', '$password')";
+    if ($conn->query($tenant)) {
+        $_SESSION['signup'] = true;
+        header("Location: signin.php");
+    } else {
+        $_SESSION['signup'] = false;
+        header("Location: index.php");
     }
 }
 function checkTenants($email, $password)
