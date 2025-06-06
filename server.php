@@ -42,9 +42,8 @@ function createHouses($houseno)
     global $conn;
     $house = "insert into houses (house_number) values($houseno)";
     if ($conn->query($house)) {
-        return true;
-    } else {
-        return false;
+        $_SESSION['addhouse'] = true;
+        header("Location: houses.php");
     }
 }
 function addTenants($firstname, $lastname, $email, $phoneno, $dateofbirth, $password)
@@ -63,7 +62,7 @@ function addTenants($firstname, $lastname, $email, $phoneno, $dateofbirth, $pass
 function checkTenants($email, $password)
 {
     global $conn;
-    $check = "SELECT `email`, `password` FROM `tenants` WHERE email = '$email' AND password = '$password' LIMIT 1";
+    $check = "SELECT `email`, `password` FROM `tenants` WHERE email = '$email' AND password = '$password' AND status = 1 LIMIT 1";
     $result = $conn->query($check);
     if ($result->num_rows > 0) {
         $_SESSION['login'] = true;
@@ -73,3 +72,5 @@ function checkTenants($email, $password)
         header("Location: signin.php");
     }
 }
+
+?>

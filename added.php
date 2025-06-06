@@ -16,11 +16,7 @@ if (isset($_POST['assign_house'])) {
     }
 } elseif (isset($_POST['create_house'])) {
     if (isset($_POST['houseno'])) {
-        if (createHouses($_POST['houseno'])) {
-            echo "Data Updated";
-        } else {
-            echo "Not Updated";
-        }
+        createHouses($_POST['houseno']);
     }
 } elseif (isset($_POST['check_tenants'])) {
     // echo 'Tets';

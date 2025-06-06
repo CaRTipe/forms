@@ -1,5 +1,11 @@
 <?php
- include "server.php" 
+ include "server.php" ;
+ if (isset($_SESSION['login']) && $_SESSION['login']) {
+  header("Location: houses.php");
+ } else {
+  // $_SESSION['login'] = false;
+  // header("Location: signin.php");
+ }
 ?>
 <!DOCTYPE html>
 <html lang="en">
